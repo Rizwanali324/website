@@ -14,13 +14,13 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <header class="header" id="home">
         <nav class="nav container">
-            <a href="#" class="logo">Rizwan <span> Muzammal</span></a>
+
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
@@ -371,80 +371,294 @@
             </div>
         </section>
 
-        <!-- Featured Projects Section -->
-        <section id="projects" class="projects">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Projects</h2>
-                </div>
+<!-- =============================================
+     REPLACE your existing <section id="projects">
+     with this entire block in your index.html
+     ============================================= -->
 
-                <div class="project-filter">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="security">Security</button>
-                    <button class="filter-btn" data-filter="industrial">Industrial</button>
-                    <button class="filter-btn" data-filter="healthcare">Healthcare</button>
-                    <button class="filter-btn" data-filter="wildlife">Wildlife</button>
-                    <button class="filter-btn" data-filter="mobile">Mobile</button>
-                </div>
-                <div class="projects-grid">
-                    <div class="project-card" data-category="wildlife">
-                        <span class="industry-tag">🦌 Wildlife</span>
-                        <div class="project-img-placeholder">Wildlife Tracking</div>
-                        <div class="project-body">
-                            <h4>Wildlife Deer Tracking — Real-Time Detection in Low Light</h4>
-                            <p class="project-result"><strong>Result:</strong> Achieved real-time tracking at 30+ FPS in
-                                outdoor, low-light conditions using YOLOv8 on NVIDIA Jetson.</p>
-                            <div class="project-tech">Tech: YOLOv8 · NVIDIA Jetson · OpenCV</div>
-                            <a href="#" class="btn-text">View Case Study →</a>
-                        </div>
-                    </div>
-                    <div class="project-card" data-category="security">
-                        <span class="industry-tag">🔒 Security</span>
-                        <div class="project-img-placeholder">Security AI</div>
-                        <div class="project-body">
-                            <h4>Facial Recognition Access Control System</h4>
-                            <p class="project-result"><strong>Result:</strong> Built anti-spoofing identity verification
-                                system with &lt;100ms response time for secure facility access.</p>
-                            <div class="project-tech">Tech: ArcFace · FaceNet · ONNX</div>
-                            <a href="#" class="btn-text">View Case Study →</a>
-                        </div>
-                    </div>
-                    <div class="project-card" data-category="security">
-                        <span class="industry-tag">📹 Surveillance</span>
-                        <div class="project-img-placeholder">CCTV Analytics</div>
-                        <div class="project-body">
-                            <h4>Real-Time CCTV People Counting & Intrusion Detection</h4>
-                            <p class="project-result"><strong>Result:</strong> Deployed live surveillance analytics
-                                system with multi-zone monitoring and automated alerts.</p>
-                            <div class="project-tech">Tech: DeepSORT · YOLO · TensorRT</div>
-                            <a href="#" class="btn-text">View Case Study →</a>
-                        </div>
-                    </div>
-                    <div class="project-card" data-category="industrial">
-                        <span class="industry-tag">🏗️ Construction</span>
-                        <div class="project-img-placeholder">Industrial Safety</div>
-                        <div class="project-body">
-                            <h4>PPE & Safety Compliance Detection — Construction Site AI</h4>
-                            <p class="project-result"><strong>Result:</strong> Automated helmet, vest, and PPE
-                                compliance monitoring, reducing manual safety checks by 80%.</p>
-                            <div class="project-tech">Tech: YOLOv5 · Roboflow · Cloud Deployment</div>
-                            <a href="#" class="btn-text">View Case Study →</a>
-                        </div>
-                    </div>
-                    <div class="project-card" data-category="healthcare">
-                        <span class="industry-tag">🏥 Healthcare</span>
-                        <div class="project-img-placeholder">Pose Analysis</div>
-                        <div class="project-body">
-                            <h4>Rehabilitation Pose Estimation & Body Angle Measurement</h4>
-                            <p class="project-result"><strong>Result:</strong> Real-time posture correction with body
-                                angle tracking at high FPS — used in physiotherapy application.</p>
-                            <div class="project-tech">Tech: YOLO Pose · OpenCV · MediaPipe</div>
-                            <a href="#" class="btn-text">View Case Study →</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<section id="projects" class="projects">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Real Projects. Real Results.</h2>
+    </div>
+
+    <div class="project-filter">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="security">Security</button>
+      <button class="filter-btn" data-filter="safety">Safety</button>
+      <button class="filter-btn" data-filter="industrial">Industrial</button>
+      <button class="filter-btn" data-filter="healthcare">Healthcare</button>
+      <button class="filter-btn" data-filter="wildlife">Wildlife</button>
+      <button class="filter-btn" data-filter="mobile">Mobile</button>
+    </div>
+
+    <div class="projects-grid">
+
+      <!-- ======================== SECURITY PROJECTS ======================== -->
+
+      <!-- 1. Facial Recognition & Emotion -->
+      <div class="project-card" data-category="security"
+           data-title="Real-Time Facial Recognition & Emotion Classification"
+           data-cat="Security · Identity AI"
+           data-result="Built a real-time system that simultaneously identifies faces and classifies emotions — deployed for live video feeds with sub-100ms inference latency."
+           data-tech="FaceNet,ArcFace,DeepFace,ONNX,OpenCV,Python"
+           data-fps="38 FPS"
+           data-upwork="https://www.upwork.com/freelancers/~01760deed270e3e3e4?p=1789606397212561408"
+           data-icon="face">
+        <div class="project-thumb">
+          <img src="assets/Security_Savefity/emtion_classification.png" alt="Facial Recognition & Emotion">
+        </div>
+        <div class="project-body">
+          <span class="industry-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            Security
+          </span>
+          <h4>Real-Time Facial Recognition & Emotion Classification</h4>
+          <div class="card-footer">
+            <button class="btn-popup" onclick="openModal(this.closest('.project-card'))">
+              View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+            <span class="upwork-badge"><svg viewBox="0 0 24 24"><path d="M18.561 3.268c-2.316 0-3.957 1.488-4.542 4.041a8.552 8.552 0 0 0-.585 2.656c-1.396-2.022-2.545-4.444-3.178-6.945H6.942v7.625c0 1.947-.698 2.518-1.553 2.518-.854 0-1.52-.571-1.52-2.518V3.02H.55v7.625c0 3.791 2.059 5.25 4.839 5.25 2.78 0 4.839-1.459 4.839-5.25V9.754c.538 1.616 1.459 3.233 2.723 4.693l-1.996 8.532h3.359l1.457-6.241c.602.188 1.233.284 1.902.284 3.759 0 6.335-2.664 6.335-6.883 0-4.186-2.544-6.871-6.387-6.871zm0 10.428c-.854 0-1.616-.254-2.218-.73l.633-2.723c.316-1.33.918-2.439 1.584-2.439.666 0 1.204.981 1.204 2.439s-.538 3.453-1.203 3.453z"/></svg>Upwork</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Security Alarm System -->
+      <div class="project-card" data-category="security"
+           data-title="Real-Time Security Alarm System with YOLOv8"
+           data-cat="Security · Surveillance AI"
+           data-result="Automated security alarm triggered by AI detection events — intruder zones, object classes, and time-based rules with instant alert dispatch."
+           data-tech="YOLOv8,OpenCV,Python,Zone Logic,Alert APIs,TensorRT"
+           data-fps="41 FPS"
+           data-upwork="https://www.upwork.com/freelancers/~01760deed270e3e3e4?p=1916123103756886016"
+           data-icon="alarm">
+        <div class="project-thumb">
+          <img src="assets/Security_Savefity/intruder_zones_detection.jpg" alt="Security Alarm System">
+        </div>
+        <div class="project-body">
+          <span class="industry-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Security
+          </span>
+          <h4>Real-Time Security Alarm System with YOLOv8 Integration</h4>
+          <div class="card-footer">
+            <button class="btn-popup" onclick="openModal(this.closest('.project-card'))">
+              View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+            <span class="upwork-badge"><svg viewBox="0 0 24 24"><path d="M18.561 3.268c-2.316 0-3.957 1.488-4.542 4.041a8.552 8.552 0 0 0-.585 2.656c-1.396-2.022-2.545-4.444-3.178-6.945H6.942v7.625c0 1.947-.698 2.518-1.553 2.518-.854 0-1.52-.571-1.52-2.518V3.02H.55v7.625c0 3.791 2.059 5.25 4.839 5.25 2.78 0 4.839-1.459 4.839-5.25V9.754c.538 1.616 1.459 3.233 2.723 4.693l-1.996 8.532h3.359l1.457-6.241c.602.188 1.233.284 1.902.284 3.759 0 6.335-2.664 6.335-6.883 0-4.186-2.544-6.871-6.387-6.871zm0 10.428c-.854 0-1.616-.254-2.218-.73l.633-2.723c.316-1.33.918-2.439 1.584-2.439.666 0 1.204.981 1.204 2.439s-.538 3.453-1.203 3.453z"/></svg>Upwork</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Anti-Spoofing Face Recognition -->
+      <div class="project-card" data-category="security mobile"
+           data-title="Real-Time Anti-Spoofing Face Recognition & Attribute Analysis"
+           data-cat="Security · Biometric AI"
+           data-result="Production face recognition system with liveness detection (anti-spoofing) and attribute analysis — age, gender, emotion — resistant to photo and video spoof attacks."
+           data-tech="ArcFace,FaceNet,Liveness Detection,ONNX,Python,OpenCV"
+           data-fps="34 FPS"
+           data-upwork="https://www.upwork.com/freelancers/~01760deed270e3e3e4?p=1953516145366208512"
+           data-icon="shield">
+        <div class="project-thumb">
+          <img src="assets/Security_Savefity/anti_spoofing_detection.png" alt="Anti-Spoofing Face Recognition">
+        </div>
+        <div class="project-body">
+          <span class="industry-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Security
+          </span>
+          <h4>Real-Time Anti-Spoofing Face Recognition & Attribute Analysis</h4>
+          <div class="card-footer">
+            <button class="btn-popup" onclick="openModal(this.closest('.project-card'))">
+              View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+            <span class="upwork-badge"><svg viewBox="0 0 24 24"><path d="M18.561 3.268c-2.316 0-3.957 1.488-4.542 4.041a8.552 8.552 0 0 0-.585 2.656c-1.396-2.022-2.545-4.444-3.178-6.945H6.942v7.625c0 1.947-.698 2.518-1.553 2.518-.854 0-1.52-.571-1.52-2.518V3.02H.55v7.625c0 3.791 2.059 5.25 4.839 5.25 2.78 0 4.839-1.459 4.839-5.25V9.754c.538 1.616 1.459 3.233 2.723 4.693l-1.996 8.532h3.359l1.457-6.241c.602.188 1.233.284 1.902.284 3.759 0 6.335-2.664 6.335-6.883 0-4.186-2.544-6.871-6.387-6.871zm0 10.428c-.854 0-1.616-.254-2.218-.73l.633-2.723c.316-1.33.918-2.439 1.584-2.439.666 0 1.204.981 1.204 2.439s-.538 3.453-1.203 3.453z"/></svg>Upwork</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Gaze Tracking -->
+      <div class="project-card" data-category="security"
+           data-title="Gaze Tracking — Real-Time Eye Movement Detection"
+           data-cat="Security · Behavioral AI"
+           data-result="Real-time gaze tracking system that maps eye movement direction and fixation points — used for attention monitoring, driver safety, and behavioral analytics."
+           data-tech="MediaPipe,OpenCV,Gaze Estimation,Python,NumPy"
+           data-fps="45 FPS"
+           data-upwork="https://www.upwork.com/freelancers/~01760deed270e3e3e4?p=1954408261121187840"
+           data-icon="eye">
+        <div class="project-thumb">
+          <img src="assets/Security_Savefity/gaze_tracking.jfif" alt="Gaze Tracking">
+        </div>
+        <div class="project-body">
+          <span class="industry-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+            Security
+          </span>
+          <h4>Gaze Tracking — Real-Time Eye Movement Detection</h4>
+          <div class="card-footer">
+            <button class="btn-popup" onclick="openModal(this.closest('.project-card'))">
+              View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+            <span class="upwork-badge"><svg viewBox="0 0 24 24"><path d="M18.561 3.268c-2.316 0-3.957 1.488-4.542 4.041a8.552 8.552 0 0 0-.585 2.656c-1.396-2.022-2.545-4.444-3.178-6.945H6.942v7.625c0 1.947-.698 2.518-1.553 2.518-.854 0-1.52-.571-1.52-2.518V3.02H.55v7.625c0 3.791 2.059 5.25 4.839 5.25 2.78 0 4.839-1.459 4.839-5.25V9.754c.538 1.616 1.459 3.233 2.723 4.693l-1.996 8.532h3.359l1.457-6.241c.602.188 1.233.284 1.902.284 3.759 0 6.335-2.664 6.335-6.883 0-4.186-2.544-6.871-6.387-6.871zm0 10.428c-.854 0-1.616-.254-2.218-.73l.633-2.723c.316-1.33.918-2.439 1.584-2.439.666 0 1.204.981 1.204 2.439s-.538 3.453-1.203 3.453z"/></svg>Upwork</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. QR Code Detection -->
+      <div class="project-card" data-category="security industrial"
+           data-title="Real-Time QR Code Detection & Automation Trigger System"
+           data-cat="Security · Industrial Automation"
+           data-result="Real-time QR code scanner that triggers automated workflows on detection — inventory updates, access control, or production line events — with zero manual input."
+           data-tech="OpenCV,ZBar,Python,Automation APIs,FastAPI,Docker"
+           data-fps="60 FPS"
+           data-upwork="https://www.upwork.com/freelancers/~01760deed270e3e3e4?p=1983529165214945280"
+           data-icon="qr">
+        <div class="project-thumb">
+          <img src="assets/Security_Savefity/qr_code_detection.png" alt="QR Code Detection">
+        </div>
+        <div class="project-body">
+          <span class="industry-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            Automation
+          </span>
+          <h4>Real-Time QR Code Detection & Automation Trigger System</h4>
+          <div class="card-footer">
+            <button class="btn-popup" onclick="openModal(this.closest('.project-card'))">
+              View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+            <span class="upwork-badge"><svg viewBox="0 0 24 24"><path d="M18.561 3.268c-2.316 0-3.957 1.488-4.542 4.041a8.552 8.552 0 0 0-.585 2.656c-1.396-2.022-2.545-4.444-3.178-6.945H6.942v7.625c0 1.947-.698 2.518-1.553 2.518-.854 0-1.52-.571-1.52-2.518V3.02H.55v7.625c0 3.791 2.059 5.25 4.839 5.25 2.78 0 4.839-1.459 4.839-5.25V9.754c.538 1.616 1.459 3.233 2.723 4.693l-1.996 8.532h3.359l1.457-6.241c.602.188 1.233.284 1.902.284 3.759 0 6.335-2.664 6.335-6.883 0-4.186-2.544-6.871-6.387-6.871zm0 10.428c-.854 0-1.616-.254-2.218-.73l.633-2.723c.316-1.33.918-2.439 1.584-2.439.666 0 1.204.981 1.204 2.439s-.538 3.453-1.203 3.453z"/></svg>Upwork</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ======================== EXISTING PROJECTS ======================== -->
+
+      <div class="project-card" data-category="safety security"
+           data-title="Construction PPE Compliance — Safety Automation"
+           data-cat="Safety · Construction AI"
+           data-result="Real-time detection of helmets, vests, and safety gear on construction sites with automated violation alerts — reducing manual safety checks by 80%."
+           data-tech="YOLOv8,Roboflow,Cloud Deployment,OpenCV,Python"
+           data-fps="34 FPS"
+           data-upwork="https://www.upwork.com/freelancers/~01760deed270e3e3e4">
+        <div class="project-thumb">
+          <img src="assets/Security_Savefity/ppe.png" alt="PPE Compliance">
+        </div>
+        <div class="project-body">
+          <span class="industry-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M19 21v-4M15 21v-10M11 21v-4M7 21v-10M3 21v-4"/></svg>
+            Construction
+          </span>
+          <h4>Construction PPE Compliance — Safety Automation</h4>
+          <div class="card-footer">
+            <button class="btn-popup" onclick="openModal(this.closest('.project-card'))">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+            <span class="upwork-badge"><svg viewBox="0 0 24 24"><path d="M18.561 3.268c-2.316 0-3.957 1.488-4.542 4.041a8.552 8.552 0 0 0-.585 2.656c-1.396-2.022-2.545-4.444-3.178-6.945H6.942v7.625c0 1.947-.698 2.518-1.553 2.518-.854 0-1.52-.571-1.52-2.518V3.02H.55v7.625c0 3.791 2.059 5.25 4.839 5.25 2.78 0 4.839-1.459 4.839-5.25V9.754c.538 1.616 1.459 3.233 2.723 4.693l-1.996 8.532h3.359l1.457-6.241c.602.188 1.233.284 1.902.284 3.759 0 6.335-2.664 6.335-6.883 0-4.186-2.544-6.871-6.387-6.871zm0 10.428c-.854 0-1.616-.254-2.218-.73l.633-2.723c.316-1.33.918-2.439 1.584-2.439.666 0 1.204.981 1.204 2.439s-.538 3.453-1.203 3.453z"/></svg>Upwork</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" data-category="wildlife"
+           data-title="Wildlife Deer Tracking — Real-Time Detection in Low Light"
+           data-cat="Wildlife · Edge AI"
+           data-result="Achieved real-time wildlife tracking at 30+ FPS in outdoor, low-light conditions on NVIDIA Jetson — deployed in the field for ecological monitoring."
+           data-tech="YOLOv8,NVIDIA Jetson,OpenCV,Python,DeepSORT"
+           data-fps="30+ FPS"
+           data-upwork="https://www.upwork.com/freelancers/~01760deed270e3e3e4">
+        <div class="project-thumb">
+          <img src="assets/Security_Savefity/wildlife_deer_tracking.jfif" alt="Wildlife Tracking">
+        </div>
+        <div class="project-body">
+          <span class="industry-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+            Wildlife
+          </span>
+          <h4>Wildlife Deer Tracking — Real-Time in Low Light</h4>
+          <div class="card-footer">
+            <button class="btn-popup" onclick="openModal(this.closest('.project-card'))">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+            <span class="upwork-badge"><svg viewBox="0 0 24 24"><path d="M18.561 3.268c-2.316 0-3.957 1.488-4.542 4.041a8.552 8.552 0 0 0-.585 2.656c-1.396-2.022-2.545-4.444-3.178-6.945H6.942v7.625c0 1.947-.698 2.518-1.553 2.518-.854 0-1.52-.571-1.52-2.518V3.02H.55v7.625c0 3.791 2.059 5.25 4.839 5.25 2.78 0 4.839-1.459 4.839-5.25V9.754c.538 1.616 1.459 3.233 2.723 4.693l-1.996 8.532h3.359l1.457-6.241c.602.188 1.233.284 1.902.284 3.759 0 6.335-2.664 6.335-6.883 0-4.186-2.544-6.871-6.387-6.871zm0 10.428c-.854 0-1.616-.254-2.218-.73l.633-2.723c.316-1.33.918-2.439 1.584-2.439.666 0 1.204.981 1.204 2.439s-.538 3.453-1.203 3.453z"/></svg>Upwork</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ======================== MOBILE PROJECTS ======================== -->
+
+      <!-- Brain Cancer Detection -->
+      <div class="project-card" data-category="mobile healthcare"
+           data-title="Brain Cancer Detection — Mobile AI App"
+           data-cat="Mobile · Healthcare AI"
+           data-result="On-device brain MRI analysis app that classifies tumor presence and type with high accuracy — running entirely on mobile without sending data to the cloud."
+           data-tech="TensorFlow Lite,CoreML,React Native,Medical Imaging,ONNX"
+           data-fps="On-device"
+           data-upwork="https://www.upwork.com/freelancers/~01760deed270e3e3e4?p=1845223865091014656"
+           data-icon="brain">
+        <div class="project-thumb">
+          <img src="assets/apps/Brain_tumor_app_ui.png" alt="Brain Cancer Detection">
+        </div>
+        <div class="project-body">
+          <span class="industry-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            Healthcare
+          </span>
+          <h4>Brain Cancer Detection — Mobile AI App</h4>
+          <div class="card-footer">
+            <button class="btn-popup" onclick="openModal(this.closest('.project-card'))">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+            <span class="upwork-badge"><svg viewBox="0 0 24 24"><path d="M18.561 3.268c-2.316 0-3.957 1.488-4.542 4.041a8.552 8.552 0 0 0-.585 2.656c-1.396-2.022-2.545-4.444-3.178-6.945H6.942v7.625c0 1.947-.698 2.518-1.553 2.518-.854 0-1.52-.571-1.52-2.518V3.02H.55v7.625c0 3.791 2.059 5.25 4.839 5.25 2.78 0 4.839-1.459 4.839-5.25V9.754c.538 1.616 1.459 3.233 2.723 4.693l-1.996 8.532h3.359l1.457-6.241c.602.188 1.233.284 1.902.284 3.759 0 6.335-2.664 6.335-6.883 0-4.186-2.544-6.871-6.387-6.871zm0 10.428c-.854 0-1.616-.254-2.218-.73l.633-2.723c.316-1.33.918-2.439 1.584-2.439.666 0 1.204.981 1.204 2.439s-.538 3.453-1.203 3.453z"/></svg>Upwork</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Teeth Segmentation App -->
+      <div class="project-card" data-category="mobile healthcare"
+           data-title="Teeth Segmentation — Mobile AI App"
+           data-cat="Mobile · Healthcare AI"
+           data-result="High-precision teeth segmentation on-device using a custom U-Net model optimized for mobile — used for dental health tracking and orthodontic planning."
+           data-tech="TensorFlow Lite,React Native,OpenCV,U-Net,Python"
+           data-fps="On-device"
+           data-upwork="https://www.upwork.com/freelancers/~01760deed270e3e3e4"
+           data-icon="scan">
+        <div class="project-thumb">
+          <img src="assets/apps/Teeth_segmentation_app_ui.png" alt="Teeth Segmentation">
+        </div>
+        <div class="project-body">
+          <span class="industry-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            Healthcare
+          </span>
+          <h4>Teeth Segmentation — Mobile AI App</h4>
+          <div class="card-footer">
+            <button class="btn-popup" onclick="openModal(this.closest('.project-card'))">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+            <span class="upwork-badge"><svg viewBox="0 0 24 24"><path d="M18.561 3.268c-2.316 0-3.957 1.488-4.542 4.041a8.552 8.552 0 0 0-.585 2.656c-1.396-2.022-2.545-4.444-3.178-6.945H6.942v7.625c0 1.947-.698 2.518-1.553 2.518-.854 0-1.52-.571-1.52-2.518V3.02H.55v7.625c0 3.791 2.059 5.25 4.839 5.25 2.78 0 4.839-1.459 4.839-5.25V9.754c.538 1.616 1.459 3.233 2.723 4.693l-1.996 8.532h3.359l1.457-6.241c.602.188 1.233.284 1.902.284 3.759 0 6.335-2.664 6.335-6.883 0-4.186-2.544-6.871-6.387-6.871zm0 10.428c-.854 0-1.616-.254-2.218-.73l.633-2.723c.316-1.33.918-2.439 1.584-2.439.666 0 1.204.981 1.204 2.439s-.538 3.453-1.203 3.453z"/></svg>Upwork</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Apple Research Replica iOS -->
+      <div class="project-card" data-category="mobile"
+           data-title="On-Device People Recognition — Apple Research Replica iOS App"
+           data-cat="Mobile · iOS AI"
+           data-result="Replicated Apple's research-grade on-device people recognition system for iOS — real-time person identification using CoreML with full offline capability."
+           data-tech="CoreML,Swift,Vision Framework,iOS,Apple Neural Engine"
+           data-fps="Real-time iOS"
+           data-upwork="https://www.upwork.com/freelancers/~01760deed270e3e3e4?p=1998126847657242624"
+           data-icon="apple">
+        <div class="project-thumb">
+          <img src="assets/apps/rec_people_ios_ondevice.jpg" alt="People Recognition">
+        </div>
+        <div class="project-body">
+          <span class="industry-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            Mobile · iOS
+          </span>
+          <h4>On-Device People Recognition — Apple Research Replica iOS App</h4>
+          <div class="card-footer">
+            <button class="btn-popup" onclick="openModal(this.closest('.project-card'))">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+            <span class="upwork-badge"><svg viewBox="0 0 24 24"><path d="M18.561 3.268c-2.316 0-3.957 1.488-4.542 4.041a8.552 8.552 0 0 0-.585 2.656c-1.396-2.022-2.545-4.444-3.178-6.945H6.942v7.625c0 1.947-.698 2.518-1.553 2.518-.854 0-1.52-.571-1.52-2.518V3.02H.55v7.625c0 3.791 2.059 5.25 4.839 5.25 2.78 0 4.839-1.459 4.839-5.25V9.754c.538 1.616 1.459 3.233 2.723 4.693l-1.996 8.532h3.359l1.457-6.241c.602.188 1.233.284 1.902.284 3.759 0 6.335-2.664 6.335-6.883 0-4.186-2.544-6.871-6.387-6.871zm0 10.428c-.854 0-1.616-.254-2.218-.73l.633-2.723c.316-1.33.918-2.439 1.584-2.439.666 0 1.204.981 1.204 2.439s-.538 3.453-1.203 3.453z"/></svg>Upwork</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /projects-grid -->
+  </div>
+</section>
 
         <!-- Testimonials Section -->
         <section id="testimonials" class="testimonials">
@@ -650,7 +864,49 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <!-- Video Modal -->
+    <div id="video-modal" class="modal">
+        <div class="modal-content video-modal-content">
+            <span class="close-video-modal">&times;</span>
+            <div class="modal-body">
+                <iframe id="video-iframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+<!-- =============================================
+     POPUP MODAL — paste ONCE anywhere before </body>
+     ============================================= -->
+<div class="project-modal-overlay" id="project-modal-overlay" role="dialog" aria-modal="true" aria-label="Project details">
+  <div class="project-modal" id="project-modal">
+    <button class="modal-close" id="modal-close" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="modal-banner">
+      <img src="" alt="" class="modal-banner-img" id="modal-img">
+      <div class="modal-banner-icon" id="modal-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
+      </div>
+      <span class="modal-banner-badge" id="modal-fps"></span>
+    </div>
+    <div class="modal-body">
+      <span class="modal-cat" id="modal-cat"></span>
+      <h2 class="modal-title" id="modal-title"></h2>
+      <div class="modal-result" id="modal-result"></div>
+      <p class="modal-section-label">Technology used</p>
+      <div class="modal-tech-tags" id="modal-tech"></div>
+      <div class="modal-actions">
+        <a href="#" class="btn-upwork" id="modal-upwork-btn" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24"><path d="M18.561 3.268c-2.316 0-3.957 1.488-4.542 4.041a8.552 8.552 0 0 0-.585 2.656c-1.396-2.022-2.545-4.444-3.178-6.945H6.942v7.625c0 1.947-.698 2.518-1.553 2.518-.854 0-1.52-.571-1.52-2.518V3.02H.55v7.625c0 3.791 2.059 5.25 4.839 5.25 2.78 0 4.839-1.459 4.839-5.25V9.754c.538 1.616 1.459 3.233 2.723 4.693l-1.996 8.532h3.359l1.457-6.241c.602.188 1.233.284 1.902.284 3.759 0 6.335-2.664 6.335-6.883 0-4.186-2.544-6.871-6.387-6.871zm0 10.428c-.854 0-1.616-.254-2.218-.73l.633-2.723c.316-1.33.918-2.439 1.584-2.439.666 0 1.204.981 1.204 2.439s-.538 3.453-1.203 3.453z"/></svg>
+          View on Upwork
+        </a>
+        <button class="btn-close-modal" id="modal-close-btn">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <script src="js/script.js"></script>
 </body>
 
 </html>

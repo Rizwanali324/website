@@ -113,7 +113,47 @@ document.addEventListener('DOMContentLoaded', () => {
         revealOnScroll.observe(el);
     });
 
-    // Project Filtering with smooth transitions
+    // Video Modal Logic
+    const videoModal = document.getElementById('video-modal');
+    const videoIframe = document.getElementById('video-iframe');
+    const videoBtns = document.querySelectorAll('.video-btn');
+    const closeVideo = document.querySelector('.close-video-modal');
+
+    if (videoModal && videoIframe && videoBtns) {
+        videoBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const videoUrl = btn.getAttribute('href');
+                videoIframe.src = videoUrl;
+                videoModal.style.display = 'flex';
+                setTimeout(() => {
+                    videoModal.classList.add('show');
+                }, 10);
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        const closeVideoFn = () => {
+            videoModal.classList.remove('show');
+            setTimeout(() => {
+                videoModal.style.display = 'none';
+                videoIframe.src = '';
+            }, 300);
+            document.body.style.overflow = 'auto';
+        };
+
+        if (closeVideo) {
+            closeVideo.addEventListener('click', closeVideoFn);
+        }
+
+        window.addEventListener('click', (e) => {
+            if (e.target === videoModal) {
+                closeVideoFn();
+            }
+        });
+    }
+
+    // Update Project Filtering to handle multiple categories
     const filterBtns = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
 
@@ -125,26 +165,23 @@ document.addEventListener('DOMContentLoaded', () => {
             const filterValue = btn.getAttribute('data-filter');
 
             projectCards.forEach(card => {
-                card.style.transition = 'all 0.4s ease-out';
-                if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                const categories = card.getAttribute('data-category').split(' ');
+                if (filterValue === 'all' || categories.includes(filterValue)) {
                     card.style.display = 'block';
-                    requestAnimationFrame(() => {
+                    setTimeout(() => {
                         card.style.opacity = '1';
                         card.style.transform = 'scale(1)';
-                    });
+                    }, 10);
                 } else {
                     card.style.opacity = '0';
                     card.style.transform = 'scale(0.9)';
                     setTimeout(() => {
-                        if (card.style.opacity === '0') {
-                            card.style.display = 'none';
-                        }
+                        card.style.display = 'none';
                     }, 400);
                 }
             });
         });
     });
-
     // Add Back to Top button functionality
     const backToTop = document.createElement('button');
     backToTop.innerHTML = '↑';
@@ -162,6 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
     backToTop.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+
     // Calendar Modal Logic
     const calendarModal = document.getElementById('calendar-modal');
     const calendarIframe = document.getElementById('calendar-iframe');
@@ -186,7 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
             calendarModal.classList.remove('show');
             setTimeout(() => {
                 calendarModal.style.display = 'none';
-                calendarIframe.src = ''; // Clear src to stop loading/video
+                calendarIframe.src = '';
             }, 300);
             document.body.style.overflow = 'auto';
         };
@@ -200,12 +238,70 @@ document.addEventListener('DOMContentLoaded', () => {
                 closeCalendar();
             }
         });
-
-        // Close on Esc key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && calendarModal.classList.contains('show')) {
-                closeCalendar();
-            }
-        });
     }
 });
+
+/* =============================================
+   PASTE THIS ENTIRE <script> block into your
+   existing js/script.js file, at the bottom.
+   ============================================= */
+
+// ---- Filter ----
+document.querySelectorAll('.filter-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+    this.classList.add('active');
+    var filter = this.dataset.filter;
+    document.querySelectorAll('.project-card').forEach(function(card) {
+      var cats = card.dataset.category || '';
+      if (filter === 'all' || cats.includes(filter)) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+  });
+});
+
+// ---- Modal ----
+var overlay = document.getElementById('project-modal-overlay');
+var modalClose = document.getElementById('modal-close');
+var modalCloseBtn = document.getElementById('modal-close-btn');
+
+function openModal(card) {
+  document.getElementById('modal-title').textContent = card.dataset.title || '';
+  document.getElementById('modal-cat').textContent = card.dataset.cat || '';
+  document.getElementById('modal-fps').textContent = (card.dataset.fps || '') + ' · Live';
+  document.getElementById('modal-result').innerHTML = '<strong>Business Result</strong>' + (card.dataset.result || '');
+  document.getElementById('modal-upwork-btn').href = card.dataset.upwork || '#';
+  
+  var cardImg = card.querySelector('.project-thumb img');
+  var modalImg = document.getElementById('modal-img');
+  if (cardImg && modalImg) {
+    modalImg.src = cardImg.getAttribute('src');
+  }
+
+  var techTags = (card.dataset.tech || '').split(',');
+  var techEl = document.getElementById('modal-tech');
+  techEl.innerHTML = '';
+  techTags.forEach(function(t) {
+    var span = document.createElement('span');
+    span.className = 'modal-tech-tag';
+    span.textContent = t.trim();
+    techEl.appendChild(span);
+  });
+
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  overlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+if (modalClose) modalClose.addEventListener('click', closeModal);
+if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
+overlay.addEventListener('click', function(e) { if (e.target === overlay) closeModal(); });
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+
